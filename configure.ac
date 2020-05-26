@@ -11,6 +11,8 @@ AC_PROG_CXX
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 
+AC_PATH_PROG([SDBUSPLUSPLUS], [sdbus++])
+
 # Checks for libraries.
 PKG_CHECK_MODULES([SDBUSPLUS], [sdbusplus])
 PKG_CHECK_MODULES([PHOSPHOR_DBUS_INTERFACES], [phosphor-dbus-interfaces])
