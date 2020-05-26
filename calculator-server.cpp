@@ -53,7 +53,6 @@ int main()
 {
     // Define a dbus path location to place the object.
     constexpr auto path = "/ryan/chow/Calculator";
-
     static_assert(
         std::string_view(
             sdbusplus::ryan::chow::client::Calculator::interface) ==
@@ -61,15 +60,17 @@ int main()
 
     // Create a new bus and affix an object manager for the subtree path we
     // intend to place objects at..
+    printf("1\r\n");
     auto b = sdbusplus::bus::new_default();
     sdbusplus::server::manager_t m{b, path};
-
+    printf("2\r\n");
     // Reserve the dbus service name : ryan.chow.Calculator
-    b.request_name(CALCULATOR_BUSNAME);
-
+    //b.request_name(CALCULATOR_BUSNAME);
+    b.request_name("ryan.chow.Calculator");
+    printf("3\r\n");
     // Create a calculator object at /ryan/chow/Calculator
     Calculator c1{b, path};
-
+    printf("4\r\n");
     // Handle dbus processing forever.
     while (1)
     {
