@@ -20,7 +20,7 @@ calculator_server_generated_files = \
 
 calculator_SOURCES = \
 	calculator-server.cpp $(calculator_server_generated_files)
-calculator_LDADD = $(SYSTEMD_LIBS) libsdbusplus.la
+calculator_LDADD = $(SYSTEMD_LIBS) #libsdbusplus.la
 
 BUILT_SOURCES = \
 	$(calculator_server_generated_files) 
